@@ -44,7 +44,7 @@ fusionar <- function(fichero_snp, fichero_summarystats, out){
   }
   
   fusion <- merge(datos_snp, datos_summarystats, by = "SNP") # Básicamente fusiona ambos ficheros usando la columna SNP (CHR:BP:A1:A2) como clave primaria, y despues...
-  fusion_filtrada <- fusion[,c(10,4,2)] # ... selecciona solo las columnas que requiere FUMA
+  fusion_filtrada <- fusion[,c(10,2, 4)] # ... selecciona solo las columnas que requiere FUMA
   write.table(fusion_filtrada, file = paste0(out, ".txt"), sep = "\t", quote = FALSE, row.names = FALSE)
   
 }
